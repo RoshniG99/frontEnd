@@ -1,0 +1,43 @@
+<html>
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<div class="jumbotron">
+  <h1 class="display-3">Template Driven Form</h1>
+  <hr class="my-2">
+ 
+
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <h3>Template Driven</h3>
+    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{'is-valid': f.submitted && firstName.invalid}" required />
+        <span class="text-danger" *ngIf="(firstName.touched || f.submitted) && firstName.errors?.required">First Name is Required!</span>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{'is-valid': f.submitted && lastName.invalid}" required />
+        <span class="text-danger" *ngIf="(lastName.touched || f.submitted) && lastName.errors?.required">Last Name is Required!</span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-valid': f.submitted && email.invalid}" required email/>
+        <span class="text-danger" *ngIf="(email.touched || f.submitted) && email.errors?.required">Email is Required!</span>
+        <span class="text-danger" *ngIf="email.touched && email.errors?.email">Enter Valid Email!</span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{'is-valid': f.submitted && password.invalid}" required />
+        <span class="text-danger" *ngIf="(password.touched || f.submitted) && password.errors?.required">Password is Required!</span>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" [disabled]="!f.valid">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</html>

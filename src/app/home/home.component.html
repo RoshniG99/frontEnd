@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<h1>Directives:</h1>
+
+<br />
+
+<h3>ngStyle:</h3>
+
+<br />
+
+<label for="name">Name</label>
+<input [ngStyle]="{'color': 'blue', 'width': '300px', 'border': 'dotted orange'}" type="text" />
+
+<br />
+
+<h3>ngClass:</h3>
+
+<br />
+<label for="marks">Enter marks:</label>
+<input type="number" [(ngModel)]='val' [ngClass]="val>35? 'pass' : 'fail'" />
+<br />
+
+<h3>ngModel:</h3>
+
+<br />
+<label for="clg">Enter college name:</label>
+<input type="text" [(ngModel)]="clg" />
+<p>You did your engineering from {{clg}} college</p>
+<br />
+
+<h3>ngIf:</h3>
+
+<p>Disappearing message:</p>
+<div *ngIf='t'>Hello! I can disappear!</div>
+<br />
+<button (click)="t=!t">Button</button>
+<br />
+<br />
+
+<h3>ngFor</h3>
+
+<ul *ngFor="let prod of prods">
+  <li>{{prod.name}}</li>
+</ul>
+<br />

@@ -1,0 +1,11 @@
+<p>
+  {{ productListChild | json}}
+</p>
+
+<ul *ngFor="let product of productListChild">
+  <li>
+    {{ product.name }}
+  </li>
+</ul>
+
+<button (click)="sendMsg()">click me</button>{{ msg }}

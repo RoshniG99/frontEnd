@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "productName": "Radio Silence",
+      "author": "Alice Oseman",
+      "productPrice": "550"
+    },
+    {
+      "id": 2,
+      "productName": "Carry On",
+      "author": "Rainbow Rowell",
+      "productPrice": "350"
+    },
+    {
+      "id": 3,
+      "productName": "The Night Circus",
+      "author": "Erin Morgenstern",
+      "productPrice": "400"
+    },
+    {
+      "id": 4,
+      "productName": "Nimona",
+      "author": "Noella Stevenson",
+      "productPrice": "350"
+    },
+    {
+      "id": 5,
+      "productName": "Dark Matter",
+      "author": "Blake Crouch",
+      "productPrice": "500"
+    }
+  ]
+}

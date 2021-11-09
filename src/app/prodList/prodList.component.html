@@ -1,0 +1,66 @@
+<!-- <button (click)="logout()">Logout</button> -->
+<app-navbar></app-navbar>
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<br />
+<br />
+<div class="row">
+<div class="limiter col-md-4 offset-4">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form-title bg-success">
+        <span class="login100-form-title-1" style="text-align: center; color: white;">
+          <h3>Product List</h3>
+        </span>
+      </div>
+
+
+
+<table class="login100-form center" style="text-align: center;">
+    <thead>
+        <th *ngFor="let column of headers">{{ column }}</th>
+    </thead>
+    <tr *ngFor="let product of productList">
+        <td>{{ product.productName }}</td>
+        <td>{{ product.author }}</td>
+        <td>{{ product.productPrice }}</td>
+        <td>
+            <button class="btn btn-success" type="button" (click)="editProduct(product)">Edit</button>
+            <button class="btn btn-success" type="button" (click)="deleteProduct(product)">Delete</button>
+        </td>
+    </tr>
+    <tr aria-colspan="3" style="margin-left: 30%;"><button class="btn btn-success" style="width: 120px;" (click)="addProduct()">Add Product</button></tr>
+</table>
+
+
+
+<div class="container" *ngIf="showAddPopup">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="card-header">
+          <h2>Reactive Form</h2>
+        </div>
+        <div class="card-body">
+          <form class="form" [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label >ProductName</label>
+              <input type="text" class="form-control" formControlName="productName" [(ngModel)]="addProductModel.productName">
+            </div>
+            <div class="form-group">
+              <label >Author</label>
+              <input type="text" class="form-control" formControlName="author" [(ngModel)]="addProductModel.author">
+            </div>
+            <div class="form-group">
+              <label >ProductPrice</label>
+              <input type="text" class="form-control" formControlName="productPrice" [(ngModel)]="addProductModel.productPrice">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
